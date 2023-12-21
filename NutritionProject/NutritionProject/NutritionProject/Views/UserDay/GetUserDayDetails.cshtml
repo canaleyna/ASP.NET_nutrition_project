@@ -1,0 +1,62 @@
+﻿@using EntityLayer.DTO;
+@model List<UserDayDetailDTO>
+
+@{
+    ViewBag.Title = "GetUserDayDetails";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+
+
+@if (Model.Count == 0)
+{
+    <h1>Değer Bulunamadı</h1>
+}
+
+else
+{
+    @*<br />
+        <h1>KEREM BULUT</h1>*@
+
+    <table class="table text-center">
+
+        <tr>
+
+            <th>Gün Adı</th>
+            <th>Günlük Su Miktarım (Bardak)</th>
+            <th>Günlük Uyku Sürem(Saat)</th>
+            <th>Günlük Adım Sayım</th>
+            <th>Günlük Stres Durumum</th>
+            <br />
+            <br />
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DayName</td>
+
+                <td>@item.Water</td>
+
+                <td>@item.Sleep</td>
+
+                <td>@item.Step</td>
+
+                <td>@item.Stress</td>
+
+
+            </tr>
+        }
+
+    </table>
+
+    <br />
+    @*<a href="/">
+            <button class="btn btn-info"> Yeni Gün Veri Girişi</button>
+
+        </a>*@
+
+}
+

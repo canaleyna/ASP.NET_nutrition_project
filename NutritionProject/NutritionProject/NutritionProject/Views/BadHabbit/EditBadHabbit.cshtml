@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.BadHabbit
+@{
+    ViewBag.Title = "EditBadHabbit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Kötü Alışkanlık Güncelleme Sayfası</h2>
+@using (Html.BeginForm("EditBadHabbit", "BadHabbit", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kötü Alışkanlık ID")
+        @Html.TextBoxFor(x => x.BadHabbitID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kötü Alışkanlık Adı")
+        @Html.TextBoxFor(x => x.BadHabbitName, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

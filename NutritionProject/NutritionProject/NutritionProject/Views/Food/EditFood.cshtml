@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.Food
+@{
+    ViewBag.Title = "EditFood";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yemek Güncelleme Sayfası</h2>
+@using (Html.BeginForm("EditFood", "Food", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Yemek ID")
+    @Html.TextBoxFor(x => x.FoodID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yemek Adı")
+    @Html.TextBoxFor(x => x.FoodName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kalori")
+    @Html.TextBoxFor(x => x.FoodCalorie, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}
+

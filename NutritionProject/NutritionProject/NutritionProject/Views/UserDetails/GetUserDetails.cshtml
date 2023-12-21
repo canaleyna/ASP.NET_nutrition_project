@@ -1,0 +1,61 @@
+﻿@using EntityLayer.DTO;
+@model List<UserDetailDTO>
+
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+
+
+@if (Model.Count == 0)
+{
+    <h1>Değer Bulunamadı</h1>
+}
+
+else
+{
+    <br />
+
+    <table class="table text-center">
+
+        <tr>
+
+            <th>Yaşım</th>
+            <th>Cinsiyetim</th>
+            <th>Boyum</th>
+            <th>Kilom</th>
+            <th>Beden Kütle İndexim</th>
+            <th>Kötü Alışkanlıklarım</th>
+            <th>Kronik Hastalıklarım</th>
+            <br />
+            <br />
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.Age</td>
+
+                <td>@item.Sex</td>
+
+                <td>@item.Height</td>
+
+                <td>@item.Weight</td>
+
+                <td>@item.BodyMassIndex</td>
+
+                <td>@item.BadHabbitName</td>
+
+                <td>@item.ChronicDiseaseName</td>
+
+            </tr>
+        }
+    </table>
+
+    @*<br />
+    <button class="btn btn-info"> Güncelle</button>*@
+}
+

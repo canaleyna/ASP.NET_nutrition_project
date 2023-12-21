@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.ChronicDisease
+@{
+    ViewBag.Title = "EditChronicDisease";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Kronik Hastalık Güncelleme Sayfası</h2>
+@using (Html.BeginForm("EditChronicDisease", "ChronicDisease", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kronik Hastalık ID")
+        @Html.TextBoxFor(x => x.ChronicDiseaseID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kronik Hastalık Adı")
+        @Html.TextBoxFor(x => x.ChronicDiseaseName, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

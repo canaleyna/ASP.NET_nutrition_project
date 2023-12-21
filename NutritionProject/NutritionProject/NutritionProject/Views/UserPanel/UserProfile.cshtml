@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<br />
+<h2>Profilim Sayfası</h2>
+
+@using (Html.BeginForm("UserProfile", "UserPanel", FormMethod.Post))
+{
+  
+
+    <div class="form-group">
+
+        @Html.Label("Adım")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name)
+        <br />
+        @Html.Label("Soyadım")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Surname)
+        <br />
+        @Html.Label("Mail Adresim")
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Email)
+        <br />
+        @Html.Label("Şifrem")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+        <br />
+        @*@Html.Label("Fotoğrafım")
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Image)
+        <br />*@
+        @Html.Label("Unvanım")
+        @Html.TextBoxFor(x => x.UserTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Image)
+        <br />
+        @*<button class="btn btn-success"> GÜNCELLE</button>*@
+    </div>
+}
+
+
+
+

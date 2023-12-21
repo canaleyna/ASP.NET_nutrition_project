@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<ChronicDisease>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kronik Hastalık Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.ChronicDiseaseID</th>
+            <td>@item.ChronicDiseaseName</td>
+            <td><a href="/ChronicDisease/DeleteChronicDisease/@item.ChronicDiseaseID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/ChronicDisease/EditChronicDisease/@item.ChronicDiseaseID" class="btn btn-warning">Güncelle</a></td>
+
+        </tr>
+    }
+
+
+</table>
+<a href="/ChronicDisease/AddChronicDisease" class="btn btn-info">Yeni Kronik Hastalık Ekle</a>
